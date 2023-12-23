@@ -1,3 +1,5 @@
+import time
+
 
 def partitions_with_bounded_sum(summax):
     plist = []
@@ -260,6 +262,9 @@ def random_symbolic_test_schur_rep_three_formulas():
 
 
 def big_symbolic_test_schur_rep_three_formulas(lambda_sum_max, kappa_sum_max):
+    print('big_symbolic_test_schur_rep_three_formulas,')
+    print('lambda_sum_max = %d, kappa_sum_max = %d.' % (lambda_sum_max, kappa_sum_max))
+    t0 = time.time()
     nmax = kappa_sum_max
     tests = []
     for n in range(1, nmax):
@@ -277,16 +282,13 @@ def big_symbolic_test_schur_rep_three_formulas(lambda_sum_max, kappa_sum_max):
         print('la = ' + str(la) + ', ka = ' + str(ka) + ', ' + str(result))
     print('number of tests: ' + str(len(tests)))
     print('big_result = ' + str(big_result))
+    t1 = time.time()
+    print('time = %.3g seconds' % (t1 - t0))
     return big_result
 
 
-#print(test_schur_rep_three_formulas([], [1], True))
+print(big_symbolic_test_schur_rep_three_formulas(5, 5))
 
-#print(test_schur_rep_three_formulas([3, 1, 1], [2, 1], True))
-
-#print(random_symbolic_test_schur_rep_three_formulas())
-
-print(big_symbolic_test_schur_rep_three_formulas(8, 8))
-
-#print(big_symbolic_test_schur_rep_three_formulas(4, 8, 8))
+# the following test takes almost one hour on a personal computer with 3.60GHz CPU.
+# print(big_symbolic_test_schur_rep_three_formulas(8, 8))
 
