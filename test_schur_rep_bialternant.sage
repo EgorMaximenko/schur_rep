@@ -1,3 +1,7 @@
+# This is a part of a joint work by Luis Angel Gonzalez-Serrano and Egor Maximenko
+# "Bialternant formula for Schur polynomials with repeating variables"
+
+
 import time
 
 
@@ -273,7 +277,6 @@ def big_symbolic_test_schur_rep_three_formulas(lambda_sum_max, kappa_sum_max):
             N = sum(ka)
             lambda_list = partitions_with_bounded_length_and_bounded_sum(N, lambda_sum_max)
             tests += [(la, ka) for la in lambda_list]
-    print('big_symbolic_test_schur_rep_two_formulas')
     print('number of tests: ' + str(len(tests)))
     big_result = True
     for la, ka in tests:
